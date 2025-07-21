@@ -8,6 +8,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnGetStarted, btnLogin;
 
+
+    //github
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
