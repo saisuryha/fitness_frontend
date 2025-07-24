@@ -7,10 +7,37 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/fitnesschallenge"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnesschallenge">
+        <activity
+            android:name=".Join_friends_challenge"
+            android:exported="false" />
+        <activity
+            android:name=".Available_challenges"
+            android:exported="false" />
+        <activity
+            android:name=".User_dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Challenge_created"
+            android:exported="false" />
+        <activity
+            android:name=".Create_challenge"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Admin_signup"
+            android:exported="false" />
         <activity
             android:name=".user_signupActivity"
             android:exported="false" />
