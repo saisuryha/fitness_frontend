@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnesschallenge">
         <activity
+            android:name=".User_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Calories_burned"
+            android:exported="false" />
+        <activity
             android:name=".Join_friends_challenge"
             android:exported="false" />
         <activity
