@@ -12,6 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnesschallenge">
         <activity
+            android:name=".Account_deleted"
+            android:exported="false" />
+        <activity
+            android:name=".Delete_account"
+            android:exported="false" />
+        <activity
+            android:name=".Steps_challenge"
+            android:exported="false" />
+        <activity
+            android:name=".About"
+            android:exported="false" />
+        <activity
+            android:name=".Logout_confirmation"
+            android:exported="false" />
+        <activity
+            android:name=".Edit_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Friend_request_sent"
+            android:exported="false" />
+        <activity
+            android:name=".Alltime_leaderboard"
+            android:exported="false" />
+        <activity
+            android:name=".monthly_leaderboard"
+            android:exported="false" />
+        <activity
+            android:name=".Weekly_leaderboard"
+            android:exported="false" />
+        <activity
+            android:name=".User_notifications"
+            android:exported="false" />
+        <activity
             android:name=".User_profile"
             android:exported="false" />
         <activity
