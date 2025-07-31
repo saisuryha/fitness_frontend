@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnesschallenge">
         <activity
+            android:name=".Manage_challenges"
+            android:exported="false" />
+        <activity
+            android:name=".User_management"
+            android:exported="false" />
+        <activity
+            android:name=".Steps_history"
+            android:exported="false" />
+        <activity
+            android:name=".Change_password"
+            android:exported="false" />
+        <activity
+            android:name=".Reset_password"
+            android:exported="false" />
+        <activity
             android:name=".Account_deleted"
             android:exported="false" />
         <activity
