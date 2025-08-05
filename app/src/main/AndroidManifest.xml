@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -93,7 +95,7 @@
             android:name=".Admin_signup"
             android:exported="false" />
         <activity
-            android:name=".user_signupActivity"
+            android:name=".User_signup"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

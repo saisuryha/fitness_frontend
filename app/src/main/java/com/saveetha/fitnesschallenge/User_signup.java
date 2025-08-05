@@ -1,5 +1,6 @@
 package com.saveetha.fitnesschallenge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -7,11 +8,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class user_signupActivity extends AppCompatActivity {
+public class User_signup extends AppCompatActivity {
 
     EditText fullName, email, password, confirmPassword;
     CheckBox termsCheckbox;
-    Button signUp;
+    Button signUp, adminSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class user_signupActivity extends AppCompatActivity {
         confirmPassword = findViewById(R.id.edit_confirm_password);
         termsCheckbox = findViewById(R.id.checkbox_terms);
         signUp = findViewById(R.id.btn_signup);
+        adminSignUp = findViewById(R.id.btn_admin); // 👈 link the button here
 
         signUp.setOnClickListener(v -> {
             if (!termsCheckbox.isChecked()) {
@@ -48,6 +50,12 @@ public class user_signupActivity extends AppCompatActivity {
 
             // TODO: API Call to your PHP backend to register the user
             Toast.makeText(this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
+        });
+
+        // 👇 Add this: Navigate to Admin Signup
+        adminSignUp.setOnClickListener(v -> {
+            Intent intent = new Intent(User_signup.this, Admin_signup.class);
+            startActivity(intent);
         });
     }
 }
