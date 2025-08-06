@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnGetStarted.setOnClickListener(v -> {
             // Navigate to Register or Onboarding Activity
-             startActivity(new Intent(MainActivity.this, User_signup.class));
+             startActivity(new Intent(MainActivity.this, Pushup_challenge.class));
         });
 
         btnLogin.setOnClickListener(v -> {
