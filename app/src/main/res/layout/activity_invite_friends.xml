@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    tools:context=".Invite_friends">
+
+<!-- Top Bar -->
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Back"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Challenges"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#222A43"
+        android:layout_marginTop="26dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"/>
+
+    <!-- Challenge Card -->
+    <LinearLayout
+        android:id="@+id/challenge_card"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@drawable/rounded_lightblue_bg"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/challenge_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_walk"
+            android:background="@drawable/rounded_blue_bg"
+            android:contentDescription="Step Challenge"
+            android:padding="8dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/challenge_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 Days Step Challenge"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#222A43"/>
+
+            <TextView
+                android:id="@+id/challenge_joined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="106 joined"
+                android:textSize="14sp"
+                android:textColor="#6B7280"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Invite Section -->
+    <TextView
+        android:id="@+id/invite_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Invite Friends to Join"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#222A43"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@id/challenge_card"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/invite_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Challenge is more fun with friends!"
+        android:textSize="14sp"
+        android:textColor="#6B7280"
+        app:layout_constraintTop_toBottomOf="@id/invite_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rounded_search_bg"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/invite_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_search"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Search Icon"/>
+
+        <EditText
+            android:id="@+id/search_src_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Search friends"
+            android:textSize="14sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+    </LinearLayout>
+
+    <!-- Friends List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friends_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:layout_constraintBottom_toTopOf="@id/invite_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Invite Button -->
+    <Button
+        android:id="@+id/invite_button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Invite Selected Friends"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#327FFF"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

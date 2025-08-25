@@ -6,7 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log; // ✅ Added for logging
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,9 +21,9 @@ import retrofit2.Response;
 
 public class User_signup extends AppCompatActivity {
 
-    private static final String TAG = "UserSignup"; // ✅ Tag for logs
+    private static final String TAG = "UserSignup";
     private EditText editName, editEmail, editPassword, confirmPassword;
-    private Button btnSignup,btn_admin;
+    private Button btnSignup, btnAdmin;// ✅ Added btnAdmin
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +36,8 @@ public class User_signup extends AppCompatActivity {
         editPassword = findViewById(R.id.edit_password);
         confirmPassword = findViewById(R.id.edit_confirm_password);
         btnSignup = findViewById(R.id.btn_signup);
-
-        // Signup Button Click
+        btnAdmin = findViewById(R.id.btn_admin);
+        // User Signup Button
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +46,6 @@ public class User_signup extends AppCompatActivity {
                 String password = editPassword.getText().toString().trim();
                 String confirmPass = confirmPassword.getText().toString().trim();
 
-                // Validate fields
                 if (TextUtils.isEmpty(name)) {
                     editName.setError("Enter your name");
                     return;
@@ -68,19 +67,29 @@ public class User_signup extends AppCompatActivity {
                     return;
                 }
 
-                // Call API
                 userSignup(name, email, password, confirmPass);
             }
         });
+
+        // ✅ Admin Signup Button
+        btnAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(User_signup.this, Admin_signup.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void userSignup(String name, String email, String password, String confirmPass) {
-        Log.d(TAG, "Attempting signup with: " + name + ", " + email); // ✅ Log inputs (no passwords in logs ideally)
+        Log.d(TAG, "Attempting signup with: " + name + ", " + email);
         ProgressDialog p = new ProgressDialog(this);
         p.setMessage("Please Wait");
         p.setCanceledOnTouchOutside(false);
         p.setCancelable(false);
         p.show();
+
         Call<User_signupResponse> call = RetrofitClient
                 .getService()
                 .registerUser(name, email, password, confirmPass);
@@ -89,46 +98,27 @@ public class User_signup extends AppCompatActivity {
             @Override
             public void onResponse(Call<User_signupResponse> call, Response<User_signupResponse> response) {
                 p.dismiss();
-                Log.d(TAG, "API Response Code: " + response.code()); // ✅ HTTP status
+                Log.d(TAG, "API Response Code: " + response.code());
                 if (response.isSuccessful() && response.body() != null) {
                     User_signupResponse signupResponse = response.body();
-                    Log.d(TAG, "API Response Body: " + signupResponse.toString()); // ✅ Full response
-
                     if (signupResponse.isSuccess()) {
                         Toast.makeText(User_signup.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(User_signup.this, Login.class));
                         finish();
                     } else {
                         Toast.makeText(User_signup.this, signupResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.e(TAG, "Signup failed: " + signupResponse.getMessage());
                     }
                 } else {
                     Toast.makeText(User_signup.this, "Server error, please try again.", Toast.LENGTH_SHORT).show();
-                    try {
-                        Log.e(TAG, "Error Body: " + response.errorBody().string()); // ✅ Log server error
-                    } catch (Exception e) {
-                        Log.e(TAG, "Error parsing errorBody", e);
-                    }
                 }
             }
 
             @Override
             public void onFailure(Call<User_signupResponse> call, Throwable t) {
                 p.dismiss();
-                Log.e(TAG, "API Call Failed", t); // ✅ Log network/other errors
+                Log.e(TAG, "API Call Failed", t);
                 Toast.makeText(User_signup.this, "Failed: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
-
-
         });
-        Button adminSignupBtn = findViewById(R.id.btn_admin_signup);
-        adminSignupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(User_signup.this, Admin_signup.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }

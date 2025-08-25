@@ -19,6 +19,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitnesschallenge">
         <activity
+            android:name=".Squats_start_challenge"
+            android:exported="false" />
+        <activity
+            android:name=".Pushup_start_challenge"
+            android:exported="false" />
+        <activity
+            android:name=".Steps_challenge_start"
+            android:exported="false" />
+        <activity
+            android:name=".Invite_friends"
+            android:exported="false" />
+        <activity
+            android:name=".reset_password"
+            android:exported="false" />
+        <activity
+            android:name=".email_verification"
+            android:exported="false" />
+        <activity
+            android:name=".forgot_password"
+            android:exported="false" />
+        <activity
             android:name=".Pushup_challenge"
             android:exported="false" />
         <activity
@@ -61,7 +82,7 @@
             android:name=".Alltime_leaderboard"
             android:exported="false" />
         <activity
-            android:name=".monthly_leaderboard"
+            android:name=".Monthly_leaderboard"
             android:exported="false" />
         <activity
             android:name=".Weekly_leaderboard"

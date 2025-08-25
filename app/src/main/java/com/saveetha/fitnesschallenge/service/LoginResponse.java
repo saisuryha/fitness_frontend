@@ -17,21 +17,25 @@ public class LoginResponse {
         return user;
     }
 
-    static class User {
+    public static class User {
         private int id;
-        private String name;
+        private String full_name;  // match your JSON key
         private String email;
+        private String role;       // add this field
 
         public int getId() {
             return id;
         }
 
         public String getName() {
-            return name;
+            return full_name;  // match your JSON key
         }
 
         public String getEmail() {
             return email;
+        }
+        public String getRole() {
+            return role;
         }
     }
 }

@@ -2,6 +2,7 @@ package com.saveetha.fitnesschallenge;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,10 +42,10 @@ public class Login extends AppCompatActivity {
         loginButton = findViewById(R.id.btn_login);
 
         loginButton.setOnClickListener(view -> {
-            String emailString = email.getText().toString();
-            String passwordString = password.getText().toString();
+            String emailString = email.getText().toString().trim();
+            String passwordString = password.getText().toString().trim();
             if(emailString.isEmpty() || passwordString.isEmpty()) {
-                Toast.makeText(Login.this, "enter email and password", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Enter email and password", Toast.LENGTH_SHORT).show();
             } else {
                 login(emailString, passwordString);
             }
@@ -62,15 +63,31 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 p.dismiss();
-                if(response.isSuccessful()) {
+                if(response.isSuccessful() && response.body() != null) {
                     LoginResponse res = response.body();
                     if(res.getStatus().equalsIgnoreCase("success")) {
                         Toast.makeText(Login.this, res.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        // Get user role from response
+                        String role = "";
+                        if(res.getUser() != null && res.getUser().getRole() != null) {
+                            role = res.getUser().getRole();
+                        }
+
+                        if ("admin".equalsIgnoreCase(role)) {
+                            Intent intent = new Intent(Login.this, Admin_dashboard.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Intent intent = new Intent(Login.this, User_dashboard.class);
+                            startActivity(intent);
+                            finish();
+                        }
                     } else {
                         Toast.makeText(Login.this, res.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(Login.this, "Server Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Server Error or Empty Response", Toast.LENGTH_SHORT).show();
                 }
             }
 

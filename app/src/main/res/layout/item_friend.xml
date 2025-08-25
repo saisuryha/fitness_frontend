@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/img_friend"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        android:background="@drawable/circle_bg"
+        android:contentDescription="Friend photo"/>
+
+    <TextView
+        android:id="@+id/tv_friend_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Friend Name"
+        android:textSize="16sp"
+        android:textColor="#222A43"
+        android:layout_marginStart="12dp"/>
+
+    <CheckBox
+        android:id="@+id/check_friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

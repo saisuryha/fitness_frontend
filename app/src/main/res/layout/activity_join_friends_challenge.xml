@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:padding="16dp"
-    tools:context=".JoinFriendsChallengeActivity">
+    android:id="@+id/main"
+    tools:context=".Join_friends_challenge">
 
     <!-- Header Section -->
     <LinearLayout

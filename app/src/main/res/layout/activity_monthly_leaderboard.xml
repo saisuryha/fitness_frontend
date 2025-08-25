@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:id="@+id/main"
     android:padding="16dp">
 
     <LinearLayout
@@ -49,6 +50,7 @@
             android:layout_marginTop="16dp">
 
             <Button
+                android:id="@+id/trophy"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -57,6 +59,7 @@
                 android:textColor="#555555" />
 
             <Button
+                android:id="@+id/monthly"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -66,8 +69,9 @@
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/Alltime"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="34dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="All Time"
@@ -93,7 +97,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_profile"
+                    android:src="@drawable/srimathi"
                     android:background="@drawable/bg_circle_silver"
                     android:scaleType="centerCrop" />
 
@@ -122,7 +126,7 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/profile"
+                    android:src="@drawable/nithi"
                     android:background="@drawable/bg_circle_gold"
                     android:scaleType="centerCrop" />
 
@@ -152,7 +156,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_profile"
+                    android:src="@drawable/aravinth"
                     android:background="@drawable/bg_circle_bronze"
                     android:scaleType="centerCrop" />
 
@@ -198,7 +202,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/profile"
+                    android:src="@drawable/santhosh"
                     android:scaleType="centerCrop"
                     android:layout_marginEnd="8dp" />
 
@@ -206,7 +210,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Emma W."
+                    android:text="santhosh"
                     android:textColor="#000"
                     android:textSize="16sp" />
 

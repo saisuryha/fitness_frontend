@@ -21,5 +21,13 @@ public interface ApiService {
             @Field("password") String password,
             @Field("confirm_password") String confirmPassword
     );
+    @FormUrlEncoded
+    @POST("admin_signup.php")  // or your actual endpoint
+    Call<User_signupResponse> registerAdmin(
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
 
 }
