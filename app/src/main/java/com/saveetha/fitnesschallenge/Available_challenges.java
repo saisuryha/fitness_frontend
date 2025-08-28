@@ -11,8 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Set;
-
 public class Available_challenges extends AppCompatActivity {
 
     @Override
@@ -25,6 +23,32 @@ public class Available_challenges extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // 👇 Pushup challenge navigation
+        Button pushupBtn = findViewById(R.id.challenge3);
+        pushupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Available_challenges.this, Pushup_start_challenge.class);
+                startActivity(intent);
+            }
+        });
+        Button SquatsBtn = findViewById(R.id.challenge2);
+        SquatsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Available_challenges.this, Squats_start_challenge.class);
+                startActivity(intent);
+            }
+        });
+        Button StepsBtn = findViewById(R.id.challenge1);
+        StepsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Available_challenges.this, Steps_challenge_start.class);
+                startActivity(intent);
+            }
         });
     }
 }

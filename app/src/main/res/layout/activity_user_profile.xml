@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -62,9 +63,9 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:src="@drawable/ic_location"
-                    android:tint="#7A7A7A"
                     android:layout_marginEnd="4dp"
-                    android:contentDescription="Location" />
+                    android:contentDescription="Location"
+                    app:tint="#7A7A7A" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -328,7 +329,6 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_bell"
-                    android:tint="#7A7A7A"
                     android:layout_marginEnd="12dp"
                     android:contentDescription="Notifications" />
 
@@ -344,7 +344,6 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:src="@drawable/ic_arrow_right"
-                    android:tint="#7A7A7A"
                     android:contentDescription="Next" />
             </LinearLayout>
 
@@ -360,7 +359,6 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_info"
-                    android:tint="#7A7A7A"
                     android:layout_marginEnd="12dp"
                     android:contentDescription="About" />
 
@@ -376,7 +374,6 @@
                     android:layout_width="16dp"
                     android:layout_height="16dp"
                     android:src="@drawable/ic_arrow_right"
-                    android:tint="#7A7A7A"
                     android:contentDescription="Next" />
             </LinearLayout>
         </LinearLayout>
@@ -394,7 +391,6 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_logout"
-                android:tint="#FF3B30"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Logout" />
 

@@ -381,7 +381,7 @@
                 android:layout_height="6dp"
                 android:progress="70"
                 android:max="100"
-                android:progressDrawable="@drawable/progress_bar_blue"
+                android:progressDrawable="@drawable/progress_bar_blue_line"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
     </LinearLayout>
