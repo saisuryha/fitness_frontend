@@ -85,7 +85,7 @@
             android:name=".Monthly_leaderboard"
             android:exported="false" />
         <activity
-            android:name=".Weekly_leaderboard"
+            android:name=".LeaderboardActivity"
             android:exported="false" />
         <activity
             android:name=".User_notifications"

@@ -1,200 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white"
-    android:padding="16dp"
-    android:id="@+id/main"
+    android:background="?attr/colorSurfaceContainerLowest"
     tools:context=".Join_friends_challenge">
 
-    <!-- Header Section -->
-    <LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:background="?attr/colorSurfaceContainerLowest"
+        app:liftOnScroll="true">
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_back"
-            android:contentDescription="@string/back" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="Join Friend's Challenge" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Join Friend's Challenge"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- Search Bar -->
-    <EditText
-        android:id="@+id/search_challenge"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:hint="Search by name or code"
-        android:paddingStart="12dp"
-        android:background="@drawable/edittext_bg"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="8dp"
-        android:inputType="text" />
-
-    <!-- Filter Chips -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="All Challenges"
-                android:textColor="@color/white"
-                android:background="@drawable/btn_filter_active"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Steps"
-                android:background="@drawable/btn_filter_inactive"
-                android:textColor="@color/black"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Calories"
-                android:background="@drawable/btn_filter_inactive"
-                android:textColor="@color/black"
-                android:layout_marginEnd="8dp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:text="Workout"
-                android:background="@drawable/btn_filter_inactive"
-                android:textColor="@color/black" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- Challenge List -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp">
-
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_challenge_layout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:divider="@drawable/divider"
-            android:showDividers="middle">
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Search by name or code"
+            app:startIconDrawable="@drawable/ic_search">
 
-            <!-- Challenge Item 1 -->
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_challenge_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12dp">
+                android:inputType="text"
+                android:maxLines="1" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/ic_profile"
-                        android:background="@drawable/circle_bg" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="Mike Chen"
-                        android:textSize="16sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-                </LinearLayout>
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-                <TextView
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_all"
+                    style="@style/Widget.Material3.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="May Steps Sprint"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:checked="true"
+                    android:text="All Challenges" />
 
-                <LinearLayout
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_steps"
+                    style="@style/Widget.Material3.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:text="Steps" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_steps" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:text="10,000 steps daily"
-                        android:textColor="@color/gray"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_calories"
+                    style="@style/Widget.Material3.Chip.Filter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:text="Calories" />
 
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/ic_calendar" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_workout"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Workout" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:text="12 days left"
-                        android:textColor="@color/gray"
-                        android:textSize="14sp" />
-                </LinearLayout>
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/btn_primary"
-                    android:text="Join Challenge"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-            </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <!-- Repeat for Sarah Wilson and David Kim similarly -->
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_challenges"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:itemCount="5"
+        tools:listitem="@layout/list_item_challenge" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

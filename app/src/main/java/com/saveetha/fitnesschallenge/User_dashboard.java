@@ -50,7 +50,7 @@ public class User_dashboard extends AppCompatActivity {
         });
 
         trophyIcon.setOnClickListener(view -> {
-            Intent intent = new Intent(User_dashboard.this, Weekly_leaderboard.class);
+            Intent intent = new Intent(User_dashboard.this, LeaderboardActivity.class);
             startActivity(intent);
         });
         bellIcon.setOnClickListener(view -> {
