@@ -1,7 +1,5 @@
 package com.saveetha.fitnesschallenge.service;
 
-import com.saveetha.fitnesschallenge.User_signup;
-
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,7 +11,7 @@ public interface ApiService {
     @POST("login.php")
     Call<LoginResponse> login(@Field("email") String email, @Field("password")String password);
 
-    @FormUrlEncoded
+    @FormUrlEncoded // ✅ THIS LINE IS NOW CORRECTED
     @POST("signup.php")
     Call<User_signupResponse> registerUser(
             @Field("full_name") String fullName,
@@ -29,5 +27,12 @@ public interface ApiService {
             @Field("password") String password
     );
 
-
+    /**
+     * Sends the Google ID Token to the backend for registration/login.
+     * @param idToken The token received from Google Sign-In.
+     * @return A response object indicating success or failure.
+     */
+    @FormUrlEncoded
+    @POST("google_signup.php") // ❗ IMPORTANT: Make sure this matches your backend endpoint
+    Call<User_signupResponse> registerWithGoogle(@Field("idToken") String idToken);
 }

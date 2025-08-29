@@ -1,9 +1,12 @@
 <resources>
     <!-- Existing strings -->
-    <string name="app_name">Fitness Challenge</string>
     <string name="fitnesschallenge">Fitness Challenge</string>
     <string name="back">Back</string>
     <string name="success_icon">Success Icon</string>
+    <string name="app_name">FitnessChallenge</string>
+
+    <string name="your_web_client_id">544940035572-fmm9o84rbtej818e39g5p60jucjjq957.apps.googleusercontent.com</string>
+
     <string-array name="distance_units">
         <item>KM</item>
         <item>Miles</item>

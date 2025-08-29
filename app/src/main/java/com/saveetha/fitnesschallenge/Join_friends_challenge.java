@@ -45,8 +45,8 @@ public class Join_friends_challenge extends AppCompatActivity {
     private void loadChallengeData() {
         challengeList = new ArrayList<>();
         challengeList.add(new Challenge("Mike Chen", "May Steps Sprint", "10,000 steps daily", "12 days left", R.drawable.ic_profile, R.drawable.ic_steps));
-        challengeList.add(new Challenge("Sarah Wilson", "Calorie Burn Challenge", "500 kcal daily", "Ends May 31st", R.drawable.nithi, R.drawable.ic_fire));
-        challengeList.add(new Challenge("David Kim", "Workout Warrior", "5 workouts weekly", "2 weeks left", R.drawable.santhosh, R.drawable.ic_dumbbell));
+        challengeList.add(new Challenge("Nithi", "Calorie Burn Challenge", "500 kcal daily", "Ends May 31st", R.drawable.nithi, R.drawable.ic_fire));
+        challengeList.add(new Challenge("Santhosh", "Workout Warrior", "5 workouts weekly", "2 weeks left", R.drawable.santhosh, R.drawable.ic_dumbbell));
         // Add as many challenges as you want...
     }
 }

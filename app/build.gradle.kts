@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    // Add the Google services Gradle plugin using .kts syntax
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -32,6 +34,14 @@ android {
 }
 
 dependencies {
+    // Firebase BoM (Bill of Materials) using .kts syntax
+    implementation(platform("com.google.firebase:firebase-bom:34.1.0"))
+
+    // Firebase SDK for Google Analytics using .kts syntax
+    implementation("com.google.firebase:firebase-analytics")
+// In your dependencies { ... } block
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    // Your existing dependencies
     implementation("androidx.camera:camera-core:1.1.0")
     implementation("androidx.camera:camera-camera2:1.1.0")
     implementation("androidx.camera:camera-lifecycle:1.1.0")
@@ -50,5 +60,4 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.google.mlkit:common:18.10.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
-
 }

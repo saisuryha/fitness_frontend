@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "876813215715",
+    "project_id": "fitchallenge-8bd1c",
+    "storage_bucket": "fitchallenge-8bd1c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876813215715:android:67a001b414faf34945e2d6",
+        "android_client_info": {
+          "package_name": "com.saveetha.fitnesschallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDluGc-NBToYY9mJqj-PxBw3qsseUYhZKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
